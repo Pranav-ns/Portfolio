@@ -1,7 +1,8 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Server, Zap, BookOpen } from "lucide-react";
+import { ExternalLink, Server, Zap, BookOpen, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { GithubIcon } from "@/components/Icons";
 import styles from "./Projects.module.css";
 
@@ -68,7 +69,7 @@ const projects = [
   },
 ];
 
-const filters = ["All", "AWS", "AI/ML", "DevOps", "React"];
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -82,20 +83,6 @@ const fadeUp = {
 export default function Projects() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const filterMap: Record<string, string[]> = {
-    All: [],
-    AWS: ["AWS EC2", "AWS Amplify", "AppSync", "Cognito", "Bedrock (Claude 3)"],
-    "AI/ML": ["Gemini AI", "Bedrock (Claude 3)", "Computer Vision", "Grafana Faro", "AI/ML"],
-    DevOps: ["Docker", "Kubernetes", "Nginx", "Prometheus", "Grafana", "GitHub Actions", "CI/CD"],
-    React: ["React", "React (Vite)", "Node.js"],
-  };
-
-  const visibleProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter((p) => p.tags.some((t) => filterMap[activeFilter].includes(t)));
 
   return (
     <section id="projects" className={`section ${styles.projects}`}>
@@ -116,27 +103,9 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Filter Tabs */}
-        <motion.div
-          className={styles.filters}
-          variants={fadeUp}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          {filters.map((f) => (
-            <button
-              key={f}
-              className={`${styles.filterBtn} ${activeFilter === f ? styles.filterActive : ""}`}
-              onClick={() => setActiveFilter(f)}
-            >
-              {f}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Project Grid */}
         <div className={styles.grid}>
-          {visibleProjects.map((project, i) => (
+          {projects.map((project, i) => (
             <motion.article
               key={project.id}
               className={`${styles.card} ${project.featured ? styles.featured : ""}`}
@@ -174,6 +143,36 @@ export default function Projects() {
               </div>
             </motion.article>
           ))}
+
+          {/* View All Projects Card */}
+          <Link href="/all-projects" style={{ textDecoration: "none", display: "block" }}>
+            <motion.article
+              className={styles.card}
+              variants={fadeUp}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+              style={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                background: "var(--glass-bg)",
+                border: "1px dashed var(--border-accent)"
+              }}
+            >
+              <div className={styles.iconBox} style={{ color: "var(--text-primary)", borderColor: "var(--border-accent)", marginBottom: "16px" }}>
+                <ArrowRight size={28} />
+              </div>
+              <h3 className={styles.cardTitle} style={{ fontSize: "1.4rem" }}>View All Projects</h3>
+              <p className={styles.cardDesc} style={{ marginTop: "12px" }}>
+                Explore the complete archive of my full-stack, AI, and cloud infrastructure projects.
+              </p>
+            </motion.article>
+          </Link>
         </div>
       </div>
     </section>
