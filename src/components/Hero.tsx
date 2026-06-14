@@ -1,5 +1,5 @@
 "use client";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Instagram } from "lucide-react";
 import { GithubIcon, LinkedInIcon } from "@/components/Icons";
 import Image from "next/image";
 import styles from "./Hero.module.css";
@@ -48,6 +48,9 @@ export default function Hero() {
           <div className={styles.socials}>
             <a href="https://www.linkedin.com/in/pranav-ns-/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
               <LinkedInIcon size={18} />
+            </a>
+            <a href="https://www.instagram.com/pranav._.ns/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+              <Instagram size={18} />
             </a>
             <span className={styles.socialDivider} />
             <span className={styles.socialInfo}>Edmonton, AB</span>

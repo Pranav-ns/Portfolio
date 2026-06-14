@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Instagram } from "lucide-react";
 import { GithubIcon, LinkedInIcon } from "@/components/Icons";
 import styles from "./Contact.module.css";
 
@@ -40,6 +40,13 @@ const contactLinks = [
     value: "Edmonton, AB",
     href: "#",
     color: "#ff6584",
+  },
+  {
+    icon: <Instagram size={20} />,
+    label: "Instagram",
+    value: "@pranav._.ns",
+    href: "https://www.instagram.com/pranav._.ns/",
+    color: "#E1306C",
   },
 ];
 
@@ -148,7 +155,16 @@ export default function Contact() {
                   className="btn-secondary"
                 >
                   <LinkedInIcon size={16} />
-                  Connect on LinkedIn
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.instagram.com/pranav._.ns/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  <Instagram size={16} />
+                  Instagram
                 </a>
               </div>
               <div className={styles.ctaMeta}>
