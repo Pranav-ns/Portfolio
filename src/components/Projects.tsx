@@ -118,10 +118,7 @@ export default function Projects() {
             >
               <div className={styles.cardGlow} style={{ background: project.color }} />
 
-              <div className={styles.cardHeader}>
-                <div className={styles.iconBox} style={{ color: project.color, borderColor: `${project.color}33` }}>
-                  {project.icon}
-                </div>
+              <div className={styles.cardHeader} style={{ justifyContent: "flex-end" }}>
                 <div className={styles.cardActions}>
                   <a href="https://github.com/Pranav-ns" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} aria-label="GitHub">
                     <GithubIcon size={16} />
