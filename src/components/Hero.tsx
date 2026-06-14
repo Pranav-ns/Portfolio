@@ -58,7 +58,7 @@ export default function Hero() {
           <div className={styles.photoWrapper}>
             <div className={styles.photoRing} />
             <Image
-              src="/pranav.jpg"
+              src="/pranav-profile.jpg"
               alt="Pranav Namah Satish"
               width={320}
               height={320}
