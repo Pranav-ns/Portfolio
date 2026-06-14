@@ -97,7 +97,6 @@ export default function Skills() {
               style={{ "--group-color": group.color } as React.CSSProperties}
             >
               <div className={styles.groupHeader}>
-                <span className={styles.emoji}>{group.emoji}</span>
                 <h3 className={styles.groupTitle}>{group.category}</h3>
               </div>
               <div className={styles.skillList}>
