@@ -5,10 +5,10 @@
    ============================================ */
 :root {
   /* Colors */
-  --bg-primary: #050510;
-  --bg-secondary: #0a0a1f;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --bg-primary: #020205;
+  --bg-secondary: #05050a;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 255, 255, 0.04);
 
   /* Accent Palette */
   --accent-primary: #6c63ff;
@@ -62,6 +62,9 @@
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
+
+  /* Cursor match */
+  --violet-dim: #3C3489;
 }
 
 /* ============================================
@@ -519,41 +522,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   CURSOR
+   CURSOR (Old cursor removed, CustomCursor uses friend's code)
    ============================================ */
-.cursor-dot,
-.cursor-outline {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition-duration: 0.1s;
-  transition-timing-function: ease-out;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--accent-secondary);
-}
-
-.cursor-outline {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(108, 99, 255, 0.6);
-  transition-property: width, height, opacity;
-  transition-duration: 0.2s;
-}
-
-.cursor-outline.cursor-hover {
-  width: 60px;
-  height: 60px;
-  border-color: var(--accent-secondary);
-  opacity: 0.5;
-}
 
 /* ============================================
    STAT NUMBER COUNTER
