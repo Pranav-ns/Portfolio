@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Briefcase, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import styles from "./Experience.module.css";
 
 const experiences = [
@@ -24,7 +24,7 @@ const experiences = [
     role: "Tech Mentor",
     company: "Global Academy of Technology",
     companyUrl: "#",
-    period: "2024 – 2025",
+    period: "June 2024 – June 2025",
     location: "Leadership",
     type: "Leadership",
     bullets: [
@@ -38,7 +38,7 @@ const experiences = [
     role: "Co Facilitator",
     company: "University of Alberta",
     companyUrl: "#",
-    period: "Present",
+    period: "Sept 2025 – April 2026",
     location: "Leadership",
     type: "Leadership",
     bullets: [
@@ -99,7 +99,6 @@ export default function Experience() {
                   <div>
                     <div className={styles.role}>{exp.role}</div>
                     <div className={styles.company}>
-                      <Briefcase size={13} />
                       {exp.companyUrl !== "#" ? (
                         <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className={styles.companyLink}>
                           {exp.company} <ExternalLink size={11} />
