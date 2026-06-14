@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import FloatingHashtags from "@/components/FloatingHashtags";
+import ChatbotWidget from "@/components/ChatbotWidget";
 
 export const metadata: Metadata = {
   title: "Pranav Namah Satish — Full-Stack & AI Engineer",
@@ -58,6 +59,7 @@ export default function RootLayout({
         <div className="grid-bg" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
+        <ChatbotWidget />
       </body>
     </html>
   );
