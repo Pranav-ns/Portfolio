@@ -123,9 +123,9 @@ export default function Projects() {
                   <a href="https://github.com/Pranav-ns" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} aria-label="GitHub">
                     <GithubIcon size={16} />
                   </a>
-                  <a href="#" className={styles.actionBtn} aria-label="Live demo">
+                  <Link href="/demo-pending" className={styles.actionBtn} aria-label="Live demo">
                     <ExternalLink size={16} />
-                  </a>
+                  </Link>
                 </div>
               </div>
 
