@@ -5,7 +5,7 @@ import { MapPin, Award, BookOpen, Calendar } from "lucide-react";
 import styles from "./About.module.css";
 
 const stats = [
-  { number: "3+", label: "Projects Shipped", icon: "🚀" },
+  { number: "17+", label: "Projects Shipped", icon: "🚀" },
   { number: "15+", label: "Technologies", icon: "⚡" },
   { number: "$10K", label: "Maple Leaf Award", icon: "🏆" },
   { number: "3", label: "Years CS Degree", icon: "🎓" },
