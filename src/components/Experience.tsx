@@ -20,6 +20,34 @@ const experiences = [
     tags: ["Technical Support", "Bug Documentation", "Customer Onboarding", "Cross-functional"],
     color: "var(--accent-primary)",
   },
+  {
+    role: "Tech Mentor",
+    company: "Global Academy of Technology",
+    companyUrl: "#",
+    period: "2024 – 2025",
+    location: "Leadership",
+    type: "Leadership",
+    bullets: [
+      "Mentored students in Theory of Computation, programming fundamentals, and core technical concepts.",
+      "Helped bridge the gap between classroom theory and practical software development."
+    ],
+    tags: ["Mentoring", "Theory of Computation", "Programming", "Technical Fundamentals"],
+    color: "#00d4ff",
+  },
+  {
+    role: "Co Facilitator",
+    company: "University of Alberta",
+    companyUrl: "#",
+    period: "Present",
+    location: "Leadership",
+    type: "Leadership",
+    bullets: [
+      "Contributing to student engagement and cross-cultural community building.",
+      "Led and supported events and activities that enhanced international student integration and campus involvement."
+    ],
+    tags: ["Community Building", "Cross-Cultural", "Event Leadership", "Student Engagement"],
+    color: "#6c63ff",
+  },
 ];
 
 const fadeUp = {
@@ -47,7 +75,7 @@ export default function Experience() {
         >
           <p className="section-label">Work History</p>
           <h2 className="section-title">
-            My <span className="text-gradient">Experience</span>
+            Experience &amp; <span className="text-gradient">Leadership</span>
           </h2>
         </motion.div>
 
