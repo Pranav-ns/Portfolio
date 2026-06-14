@@ -10,7 +10,7 @@ export default function CustomCursor() {
     const move = (e: MouseEvent) => {
       raf = requestAnimationFrame(() => {
         if (ref.current) {
-          ref.current.style.background = `radial-gradient(550px circle at ${e.clientX}px ${e.clientY}px, color-mix(in srgb, var(--violet-dim) 3%, transparent), transparent 40%)`;
+          ref.current.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(255, 255, 255, 0.06), transparent 40%)`;
         }
       });
     };
