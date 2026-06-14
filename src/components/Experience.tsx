@@ -8,7 +8,7 @@ const experiences = [
   {
     role: "Technical Support Intern",
     company: "Joint Role Media",
-    companyUrl: "#",
+    companyUrl: "https://jointrolemedia.com/",
     period: "Mar 2025 – Aug 2025",
     location: "Bangalore",
     type: "Full-time",
@@ -23,7 +23,7 @@ const experiences = [
   {
     role: "Tech Mentor",
     company: "Global Academy of Technology",
-    companyUrl: "#",
+    companyUrl: "https://www.gat.ac.in/",
     period: "June 2024 – June 2025",
     location: "Leadership",
     type: "Leadership",
@@ -36,8 +36,8 @@ const experiences = [
   },
   {
     role: "Co Facilitator",
-    company: "University of Alberta",
-    companyUrl: "#",
+    company: "University of Alberta (International House)",
+    companyUrl: "https://www.ualberta.ca/en/international/global-education/international-house/index.html",
     period: "Sept 2025 – April 2026",
     location: "Leadership",
     type: "Leadership",
