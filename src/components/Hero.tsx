@@ -46,11 +46,11 @@ export default function Hero() {
           </div>
 
           <div className={styles.socials}>
-            <a href="https://linkedin.com/in/pranav-namah-satish" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/pranav-ns-/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
               <LinkedInIcon size={18} />
             </a>
             <span className={styles.socialDivider} />
-            <span className={styles.socialInfo}>Bangalore · Edmonton</span>
+            <span className={styles.socialInfo}>Edmonton, AB</span>
           </div>
         </div>
 

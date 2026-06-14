@@ -24,8 +24,16 @@ export default function CustomCursor() {
   return (
     <div
       ref={ref}
-      className="pointer-events-none fixed inset-0"
-      style={{ zIndex: 9999, background: "transparent" }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 9999,
+        background: "transparent",
+        pointerEvents: "none",
+      }}
     />
   );
 }

@@ -80,7 +80,7 @@ export default function About() {
             <div className={styles.quickInfo}>
               <div className={styles.infoItem}>
                 <MapPin size={14} style={{ color: "var(--accent-secondary)" }} />
-                <span>Bangalore, India · Edmonton, AB</span>
+                <span>Edmonton, AB</span>
               </div>
               <div className={styles.infoItem}>
                 <BookOpen size={14} style={{ color: "var(--accent-secondary)" }} />
@@ -101,7 +101,7 @@ export default function About() {
                 Contact Me
               </a>
               <a
-                href="https://linkedin.com/in/pranav-namah-satish"
+                href="https://www.linkedin.com/in/pranav-ns-/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"

@@ -31,13 +31,13 @@ const contactLinks = [
     icon: <LinkedInIcon size={20} />,
     label: "LinkedIn",
     value: "Pranav Namah Satish",
-    href: "https://linkedin.com/in/pranav-namah-satish",
+    href: "https://www.linkedin.com/in/pranav-ns-/",
     color: "#f59e0b",
   },
   {
     icon: <MapPin size={20} />,
     label: "Location",
-    value: "Bangalore, IN · Edmonton, AB",
+    value: "Edmonton, AB",
     href: "#",
     color: "#ff6584",
   },
@@ -142,7 +142,7 @@ export default function Contact() {
                   Send Email
                 </a>
                 <a
-                  href="https://linkedin.com/in/pranav-namah-satish"
+                  href="https://www.linkedin.com/in/pranav-ns-/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
