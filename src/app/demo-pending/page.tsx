@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { GithubIcon } from "@/components/Icons";
 
 export default function DemoPendingPage() {
   return (
@@ -8,13 +9,28 @@ export default function DemoPendingPage() {
         <h1 className="section-title" style={{ marginBottom: "16px" }}>
           Live <span className="text-gradient">Demo</span>
         </h1>
-        <p className="section-subtitle" style={{ margin: "0 auto 40px", fontSize: "1.05rem" }}>
+        <p className="section-subtitle" style={{ margin: "0 auto 20px", fontSize: "1.05rem" }}>
           This project's live demo is currently under development. Please come back later! Sorry for the inconvenience.
         </p>
-        <Link href="/" className="btn-primary" style={{ display: "inline-flex" }}>
-          <ArrowLeft size={18} />
-          Back to Home
-        </Link>
+        <p style={{ margin: "0 auto 40px", color: "var(--text-muted)", fontSize: "0.95rem" }}>
+          Or please visit my GitHub to check it out!
+        </p>
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
+          <Link href="/" className="btn-secondary" style={{ display: "inline-flex" }}>
+            <ArrowLeft size={18} />
+            Back to Home
+          </Link>
+          <a
+            href="https://github.com/Pranav-ns"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ display: "inline-flex" }}
+          >
+            <GithubIcon size={18} />
+            GitHub Profile
+          </a>
+        </div>
       </div>
     </div>
   );
