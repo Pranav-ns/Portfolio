@@ -42,6 +42,30 @@ const projects = [
     gradient: "linear-gradient(135deg, rgba(255,101,132,0.15) 0%, rgba(108,99,255,0.05) 100%)",
     featured: false,
   },
+  {
+    id: "failure-forensics",
+    title: "Failure Forensics Tool for AI Pipelines",
+    subtitle: "AI Reliability Engineering Platform",
+    description:
+      "Building an observability and debugging framework for AI pipelines that monitors LLM workflows, identifies failure points across RAG, prompting, and model inference stages, and performs automated root-cause analysis to accelerate troubleshooting and enhance production AI reliability.",
+    tags: ["AI/ML", "Observability", "RAG", "LLM Workflows", "Python"],
+    icon: <Zap size={22} />,
+    color: "#00ffb3",
+    gradient: "linear-gradient(135deg, rgba(0,255,179,0.15) 0%, rgba(0,212,255,0.05) 100%)",
+    featured: true,
+  },
+  {
+    id: "llm-cost-autopilot",
+    title: "LLM Cost Autopilot",
+    subtitle: "AI Reliability & Cost Optimization Platform",
+    description:
+      "Engineered an intelligent inference orchestration layer that optimizes LLM spending through complexity-aware routing, automated quality assurance, and self-improving feedback loops. Integrated multi-provider model management, real-time cost analytics, and escalation mechanisms to balance quality, latency, and operational efficiency at scale.",
+    tags: ["AI/ML", "Cost Optimization", "Inference Orchestration", "LLM Routing", "Analytics"],
+    icon: <Server size={22} />,
+    color: "#6c63ff",
+    gradient: "linear-gradient(135deg, rgba(108,99,255,0.2) 0%, rgba(0,212,255,0.08) 100%)",
+    featured: true,
+  },
 ];
 
 const filters = ["All", "AWS", "AI/ML", "DevOps", "React"];
@@ -63,7 +87,7 @@ export default function Projects() {
   const filterMap: Record<string, string[]> = {
     All: [],
     AWS: ["AWS EC2", "AWS Amplify", "AppSync", "Cognito", "Bedrock (Claude 3)"],
-    "AI/ML": ["Gemini AI", "Bedrock (Claude 3)", "Computer Vision", "Grafana Faro"],
+    "AI/ML": ["Gemini AI", "Bedrock (Claude 3)", "Computer Vision", "Grafana Faro", "AI/ML"],
     DevOps: ["Docker", "Kubernetes", "Nginx", "Prometheus", "Grafana", "GitHub Actions", "CI/CD"],
     React: ["React", "React (Vite)", "Node.js"],
   };
