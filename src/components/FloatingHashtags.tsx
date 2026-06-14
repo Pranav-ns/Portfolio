@@ -63,13 +63,13 @@ export default function FloatingHashtags() {
   return (
     <div 
       style={{ 
-        position: "absolute", 
+        position: "fixed", 
         top: 0, 
         left: 0, 
-        width: "100%", 
-        height: "100%", 
+        width: "100vw", 
+        height: "100vh", 
         overflow: "hidden", 
-        zIndex: -10, 
+        zIndex: -3, 
         pointerEvents: "none" 
       }}
     >
@@ -78,7 +78,7 @@ export default function FloatingHashtags() {
           key={i}
           initial={{ y: 0, x: 0 }}
           animate={{ 
-            y: [0, -40, 0, 40, 0],
+            y: [0, -30, 0, 30, 0],
             x: [0, tag.driftX, 0, -tag.driftX, 0]
           }}
           transition={{
@@ -89,11 +89,11 @@ export default function FloatingHashtags() {
           }}
           style={{
             position: "absolute",
-            left: `${Math.max(5, Math.min(95, tag.x))}%`, // keep within screen bounds roughly
+            left: `${Math.max(2, Math.min(98, tag.x))}%`, 
             top: `${Math.max(2, Math.min(98, tag.y))}%`,
-            color: "var(--text-muted)", // Use theme's muted text color
-            opacity: 0.15, // Extremely faint
+            color: "rgba(255, 255, 255, 0.08)", // Light grey, slightly more visible
             fontSize: "0.85rem",
+            fontWeight: 500,
             fontFamily: "var(--font-mono)",
             whiteSpace: "nowrap",
             transform: "translate(-50%, -50%)",
