@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <h2 className={styles.title}>
-            Full-Stack Developer & AI Engineer
+            Software Engineer & AI Engineer
           </h2>
 
           <p className={styles.bio}>
