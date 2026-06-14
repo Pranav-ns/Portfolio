@@ -3,23 +3,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Award, BookOpen, Calendar } from "lucide-react";
 import styles from "./About.module.css";
-
-const stats = [
-  { number: "17+", label: "Projects Shipped", icon: "🚀" },
-  { number: "15+", label: "Technologies", icon: "⚡" },
-  { number: "$10K", label: "Maple Leaf Award", icon: "🏆" },
-  { number: "3", label: "Years CS Degree", icon: "🎓" },
-];
-
-const education = [
-  {
-    degree: "BSc Honours in Computing Science – Artificial Intelligence",
-    school: "University of Alberta",
-    location: "Edmonton, AB",
-    period: "Sep 2025 – Apr 2028 (Expected)",
-    note: "🏆 Maple Leaf Award (2025): Academic excellence — $10,000",
-  },
-];
+import TerminalAbout from "./TerminalAbout";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -111,54 +95,15 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right – Stats + Education */}
-          <div className={styles.rightCol}>
-            {/* Stats Grid */}
-            <motion.div
-              className={styles.statsGrid}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={fadeUp}
-            >
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  className={`glass-card glow-border ${styles.statCard}`}
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                >
-                  <span style={{ fontSize: "1.8rem" }}>{s.icon}</span>
-                  <div className="stat-number">{s.number}</div>
-                  <div style={{ color: "var(--text-muted)", fontSize: "0.8rem", fontWeight: 500 }}>{s.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Education */}
-            <motion.div
-              className={styles.educationCard}
-              variants={fadeUp}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-            >
-              <h3 className={styles.educationTitle}>
-                <BookOpen size={18} style={{ color: "var(--accent-primary)" }} />
-                Education
-              </h3>
-              {education.map((edu) => (
-                <div key={edu.degree} className={styles.eduItem}>
-                  <div className={styles.eduDegree}>{edu.degree}</div>
-                  <div className={styles.eduMeta}>
-                    <span style={{ color: "var(--accent-secondary)" }}>{edu.school}</span>
-                    <span>·</span>
-                    <span style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)", fontSize: "0.78rem" }}>{edu.period}</span>
-                  </div>
-                  <div className={styles.eduNote}>{edu.note}</div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+          {/* Right – Terminal Animation */}
+          <motion.div
+            className={styles.rightCol}
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            <TerminalAbout />
+          </motion.div>
         </div>
       </div>
     </section>
