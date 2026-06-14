@@ -1,0 +1,253 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 0 60px;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.orb1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -200px;
+}
+.orb2 {
+  width: 500px;
+  height: 500px;
+  top: 20%;
+  right: -150px;
+}
+.orb3 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: 30%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+
+.textSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.roleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  min-height: 42px;
+}
+
+.rolePrefix {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.roleText {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  min-width: 260px;
+}
+
+.cursor {
+  color: var(--accent-secondary);
+  animation: blink 1s step-end infinite;
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.bio {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialLink:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(108, 99, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.socialDivider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-subtle);
+  margin: 0 4px;
+}
+
+.socialInfo {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Photo side */
+.photoSide {
+  display: flex;
+  justify-content: center;
+}
+
+.photoWrapper {
+  position: relative;
+  width: 320px;
+}
+
+.photoBorder {
+  border-radius: 24px;
+}
+
+.photoInner {
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Floating badges */
+.badge1,
+.badge2,
+.badge3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+}
+
+.badge1 {
+  top: 24px;
+  right: -60px;
+}
+
+.badge2 {
+  bottom: 80px;
+  right: -70px;
+}
+
+.badge3 {
+  bottom: 20px;
+  left: -60px;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+  .textSide {
+    align-items: center;
+  }
+  .bio {
+    text-align: center;
+  }
+  .photoWrapper {
+    width: 260px;
+  }
+  .badge1, .badge2, .badge3 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0 60px;
+  }
+  .roleRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ctaRow {
+    justify-content: center;
+  }
+}
