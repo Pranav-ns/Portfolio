@@ -112,12 +112,9 @@ export default function Projects() {
               variants={fadeUp}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              style={{ background: project.gradient }}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              <div className={styles.cardGlow} style={{ background: project.color }} />
-
               <div className={styles.cardHeader} style={{ justifyContent: "flex-end" }}>
                 <div className={styles.cardActions}>
                   <a href="https://github.com/Pranav-ns" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} aria-label="GitHub">
@@ -130,7 +127,7 @@ export default function Projects() {
               </div>
 
               <h3 className={styles.cardTitle}>{project.title}</h3>
-              <p className={styles.cardSubtitle} style={{ color: project.color }}>{project.subtitle}</p>
+              <p className={styles.cardSubtitle} style={{ color: "var(--text-secondary)" }}>{project.subtitle}</p>
               <p className={styles.cardDesc}>{project.description}</p>
 
               <div className={styles.cardTags}>

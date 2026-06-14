@@ -32,7 +32,7 @@ const experiences = [
       "Helped bridge the gap between classroom theory and practical software development."
     ],
     tags: ["Mentoring", "Theory of Computation", "Programming", "Technical Fundamentals"],
-    color: "#00d4ff",
+    color: "var(--accent-secondary)",
   },
   {
     role: "Co Facilitator",
@@ -46,7 +46,7 @@ const experiences = [
       "Led and supported events and activities that enhanced international student integration and campus involvement."
     ],
     tags: ["Community Building", "Cross-Cultural", "Event Leadership", "Student Engagement"],
-    color: "#6c63ff",
+    color: "var(--accent-secondary)",
   },
 ];
 
