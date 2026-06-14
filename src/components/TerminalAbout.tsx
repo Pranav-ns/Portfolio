@@ -48,7 +48,7 @@ export default function TerminalAbout() {
             <br />
             - DevOps Engineer
             <br />
-            - Cloud Engineer
+            - Software Engineer
             <br />
             - Cloud Architect
             <br />

@@ -92,6 +92,19 @@ export default function About() {
               >
                 LinkedIn
               </a>
+              <a
+                href="/resume.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                style={{
+                  background: "var(--gradient-primary)",
+                  color: "#fff",
+                  border: "none"
+                }}
+              >
+                Resume
+              </a>
             </div>
           </motion.div>
 
