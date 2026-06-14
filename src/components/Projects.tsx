@@ -18,6 +18,7 @@ const projects = [
     color: "#6c63ff",
     gradient: "linear-gradient(135deg, rgba(108,99,255,0.06) 0%, rgba(0,212,255,0.02) 100%)",
     featured: true,
+    demoLink: "https://caterbridge.pranavns.com",
   },
   {
     id: "papo",
@@ -30,6 +31,7 @@ const projects = [
     color: "#00d4ff",
     gradient: "linear-gradient(135deg, rgba(0,212,255,0.05) 0%, rgba(0,255,179,0.02) 100%)",
     featured: true,
+    demoLink: "https://papo-ai.pranavns.com",
   },
   {
     id: "shelfout",
@@ -123,9 +125,15 @@ export default function Projects() {
                   <a href="https://github.com/Pranav-ns" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} aria-label="GitHub">
                     <GithubIcon size={16} />
                   </a>
-                  <Link href="/demo-pending" className={styles.actionBtn} aria-label="Live demo">
-                    <ExternalLink size={16} />
-                  </Link>
+                  {project.demoLink ? (
+                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={styles.actionBtn} aria-label="Live demo">
+                      <ExternalLink size={16} />
+                    </a>
+                  ) : (
+                    <Link href="/demo-pending" className={styles.actionBtn} aria-label="Live demo">
+                      <ExternalLink size={16} />
+                    </Link>
+                  )}
                 </div>
               </div>
 
