@@ -60,8 +60,8 @@ export default function Hero() {
             <Image
               src="/pranav-profile.jpg"
               alt="Pranav Namah Satish"
-              width={320}
-              height={320}
+              width={420}
+              height={420}
               className={styles.photo}
               priority
             />

@@ -158,8 +158,8 @@
 
 .photoWrapper {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 420px;
+  height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -284,7 +284,7 @@
   }
   
   .photoWrapper {
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
   }
 }
