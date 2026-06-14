@@ -68,13 +68,22 @@ export default function Navbar() {
               <span className={styles.navLinkLine} />
             </button>
           ))}
-          <a
-            href="mailto:pns@ualberta.ca"
-            className="btn-primary"
-            style={{ padding: "10px 22px", fontSize: "0.85rem" }}
-          >
-            Hire Me
-          </a>
+          <div style={{ display: "flex", gap: "12px", marginLeft: "16px" }}>
+            <Link
+              href="/blogs"
+              className="btn-secondary"
+              style={{ padding: "10px 22px", fontSize: "0.85rem" }}
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/games"
+              className="btn-primary"
+              style={{ padding: "10px 22px", fontSize: "0.85rem" }}
+            >
+              Games
+            </Link>
+          </div>
         </nav>
 
         {/* Mobile Toggle */}
@@ -102,14 +111,22 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-          <a
-            href="mailto:pns@ualberta.ca"
-            className="btn-primary"
-            style={{ marginTop: "16px", justifyContent: "center" }}
-            onClick={() => setMenuOpen(false)}
-          >
-            Hire Me
-          </a>
+          <div style={{ display: "flex", gap: "12px", marginTop: "16px", justifyContent: "center" }}>
+            <Link
+              href="/blogs"
+              className="btn-secondary"
+              onClick={() => setMenuOpen(false)}
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/games"
+              className="btn-primary"
+              onClick={() => setMenuOpen(false)}
+            >
+              Games
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
