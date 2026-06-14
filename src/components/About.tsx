@@ -44,16 +44,13 @@ export default function About() {
             variants={fadeUp}
           >
             <p>
-              I&apos;m <strong>Pranav Namah Satish</strong>, a Computing Science (AI) student at the <span className="text-gradient">University of Alberta</span> with a passion for building intelligent, scalable systems that combine software engineering, cloud infrastructure, and machine learning.
+              I&apos;m <strong>Pranav Namah Satish</strong>, a Computing Science (AI) student at the <span className="text-gradient">University of Alberta</span> passionate about building intelligent and scalable systems at the intersection of software, cloud, and AI.
             </p>
             <p>
-              What excites me most about technology is solving complex problems that create real-world impact. Whether it&apos;s developing full-stack applications, deploying cloud-native solutions on AWS, integrating large language models, or exploring MLOps and AI reliability, I enjoy understanding how systems work end-to-end and making them better.
+              My experience spans full-stack development, AWS cloud services, containerization with Docker and Kubernetes, and AI integrations using modern foundation models. I&apos;m particularly interested in AI engineering, MLOps, and building reliable systems that bridge machine learning and production infrastructure.
             </p>
             <p>
-              My experience spans modern web development, cloud computing, DevOps practices, and AI engineering. Beyond coursework, I&apos;ve worked on projects involving AI-powered applications, cloud deployments, and AI pipeline observability, while continuously expanding my knowledge through research, certifications, and hands-on experimentation.
-            </p>
-            <p>
-              Outside of engineering, I mentor students, contribute to university communities, and enjoy helping others learn technical concepts. I&apos;m currently focused on deepening my expertise in machine learning, cloud architecture, and AI systems with the long-term goal of building reliable, production-ready intelligent technologies at scale.
+              Beyond engineering, I mentor students, contribute to university communities, and continuously explore new technologies through research, projects, and hands-on learning.
             </p>
 
             {/* Quick Info */}
