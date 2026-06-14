@@ -5,8 +5,8 @@
    ============================================ */
 :root {
   /* Colors */
-  --bg-primary: #020205;
-  --bg-secondary: #05050a;
+  --bg-primary: #000000;
+  --bg-secondary: #050505;
   --bg-card: rgba(255, 255, 255, 0.02);
   --bg-card-hover: rgba(255, 255, 255, 0.04);
 
@@ -355,8 +355,8 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -2;
   background-color: var(--bg-primary);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 60px 60px;
   background-position: center top;
   pointer-events: none;
