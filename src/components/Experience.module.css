@@ -29,6 +29,7 @@
   bottom: 60px;
   width: 1px;
   background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary), transparent);
+  opacity: 0.3;
 }
 
 .timelineItem {

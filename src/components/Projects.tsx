@@ -16,7 +16,7 @@ const projects = [
     tags: ["React", "Node.js", "AWS EC2", "Docker", "Nginx", "Prometheus", "Grafana", "MongoDB", "Gemini AI", "Stripe"],
     icon: <Server size={22} />,
     color: "#6c63ff",
-    gradient: "linear-gradient(135deg, rgba(108,99,255,0.2) 0%, rgba(0,212,255,0.08) 100%)",
+    gradient: "linear-gradient(135deg, rgba(108,99,255,0.06) 0%, rgba(0,212,255,0.02) 100%)",
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     tags: ["React (Vite)", "AWS Amplify", "AppSync", "Cognito", "Bedrock (Claude 3)", "GraphQL", "GitHub Actions", "Grafana Faro"],
     icon: <Zap size={22} />,
     color: "#00d4ff",
-    gradient: "linear-gradient(135deg, rgba(0,212,255,0.15) 0%, rgba(0,255,179,0.05) 100%)",
+    gradient: "linear-gradient(135deg, rgba(0,212,255,0.05) 0%, rgba(0,255,179,0.02) 100%)",
     featured: true,
   },
   {
@@ -40,7 +40,7 @@ const projects = [
     tags: ["Computer Vision", "Python", "Node.js", "REST APIs", "Docker", "Kubernetes", "Cloud Deployment"],
     icon: <BookOpen size={22} />,
     color: "#ff6584",
-    gradient: "linear-gradient(135deg, rgba(255,101,132,0.15) 0%, rgba(108,99,255,0.05) 100%)",
+    gradient: "linear-gradient(135deg, rgba(255,101,132,0.05) 0%, rgba(108,99,255,0.02) 100%)",
     featured: false,
   },
   {
@@ -52,7 +52,7 @@ const projects = [
     tags: ["AI/ML", "Observability", "RAG", "LLM Workflows", "Python"],
     icon: <Zap size={22} />,
     color: "#00ffb3",
-    gradient: "linear-gradient(135deg, rgba(0,255,179,0.15) 0%, rgba(0,212,255,0.05) 100%)",
+    gradient: "linear-gradient(135deg, rgba(0,255,179,0.05) 0%, rgba(0,212,255,0.02) 100%)",
     featured: true,
   },
   {
@@ -64,7 +64,7 @@ const projects = [
     tags: ["AI/ML", "Cost Optimization", "Inference Orchestration", "LLM Routing", "Analytics"],
     icon: <Server size={22} />,
     color: "#6c63ff",
-    gradient: "linear-gradient(135deg, rgba(108,99,255,0.2) 0%, rgba(0,212,255,0.08) 100%)",
+    gradient: "linear-gradient(135deg, rgba(108,99,255,0.06) 0%, rgba(0,212,255,0.02) 100%)",
     featured: true,
   },
 ];
@@ -112,9 +112,12 @@ export default function Projects() {
               variants={fadeUp}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
+              style={{ background: project.gradient }}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
             >
+              <div className={styles.cardGlow} style={{ background: project.color }} />
+
               <div className={styles.cardHeader} style={{ justifyContent: "flex-end" }}>
                 <div className={styles.cardActions}>
                   <a href="https://github.com/Pranav-ns" target="_blank" rel="noopener noreferrer" className={styles.actionBtn} aria-label="GitHub">
@@ -127,7 +130,7 @@ export default function Projects() {
               </div>
 
               <h3 className={styles.cardTitle}>{project.title}</h3>
-              <p className={styles.cardSubtitle} style={{ color: "var(--text-secondary)" }}>{project.subtitle}</p>
+              <p className={styles.cardSubtitle} style={{ color: project.color }}>{project.subtitle}</p>
               <p className={styles.cardDesc}>{project.description}</p>
 
               <div className={styles.cardTags}>
