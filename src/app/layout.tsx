@@ -33,8 +33,6 @@ export const metadata: Metadata = {
   },
 };
 
-import MatrixBackground from "@/components/MatrixBackground";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,7 +53,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <MatrixBackground />
+        <div className="grid-bg" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
       </body>

@@ -347,8 +347,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   NOISE TEXTURE OVERLAY
+   BACKGROUND OVERLAYS
    ============================================ */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: var(--bg-primary);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center top;
+  pointer-events: none;
+}
+
 .noise-overlay {
   position: fixed;
   inset: 0;
