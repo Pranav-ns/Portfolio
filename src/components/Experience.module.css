@@ -84,6 +84,8 @@
   color: var(--accent-secondary);
   text-decoration: none;
   transition: color 0.2s;
+  position: relative;
+  z-index: 50;
 }
 
 .companyLink:hover {

@@ -204,6 +204,7 @@ h1, h2, h3, h4, h5, h6 {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity var(--transition-smooth);
+  pointer-events: none;
 }
 
 .glow-border:hover::before {
