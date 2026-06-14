@@ -7,46 +7,32 @@ import styles from "./Contact.module.css";
 
 const contactLinks = [
   {
-    icon: <Mail size={20} />,
+    icon: <Mail size={24} />,
     label: "Email",
     value: "pns@ualberta.ca",
     href: "mailto:pns@ualberta.ca",
     color: "#6c63ff",
   },
   {
-    icon: <Phone size={20} />,
-    label: "Phone",
-    value: "+1 825 582 8555",
-    href: "tel:+18255828555",
+    icon: <LinkedInIcon size={24} />,
+    label: "LinkedIn",
+    value: "Pranav Namah Satish",
+    href: "https://www.linkedin.com/in/pranav-ns-/",
     color: "#00d4ff",
   },
   {
-    icon: <GithubIcon size={20} />,
+    icon: <GithubIcon size={24} />,
     label: "GitHub",
     value: "github.com/Pranav-ns",
     href: "https://github.com/Pranav-ns",
     color: "#00ffb3",
   },
   {
-    icon: <LinkedInIcon size={20} />,
-    label: "LinkedIn",
-    value: "Pranav Namah Satish",
-    href: "https://www.linkedin.com/in/pranav-ns-/",
-    color: "#f59e0b",
-  },
-  {
-    icon: <MapPin size={20} />,
-    label: "Location",
-    value: "Edmonton, AB",
-    href: "#",
-    color: "#ff6584",
-  },
-  {
-    icon: <InstagramIcon size={20} />,
+    icon: <InstagramIcon size={24} />,
     label: "Instagram",
     value: "@pranav._.ns",
     href: "https://www.instagram.com/pranav._.ns/",
-    color: "#E1306C",
+    color: "#ff6584",
   },
 ];
 
@@ -75,105 +61,42 @@ export default function Contact() {
           variants={fadeUp}
           className={styles.header}
         >
-          <p className="section-label">Let's Talk</p>
+          <div className={`availability-badge ${styles.badge}`} style={{ margin: "0 auto 24px" }}>
+            <span className="dot" />
+            Available for 4, 8, 12-month internships
+          </div>
           <h2 className="section-title">
-            Get In <span className="text-gradient">Touch</span>
+            Let&apos;s build something <span className="text-gradient">together.</span>
           </h2>
-          <p className="section-subtitle">
-            I&apos;m actively seeking internship opportunities. Whether you have a role, a project,
-            or just want to connect — my inbox is always open.
+          <p className="section-subtitle" style={{ maxWidth: "600px", margin: "0 auto" }}>
+            Whether it&apos;s a full-stack role, cloud infrastructure, AI/ML, or DevOps — I&apos;m ready to contribute from day one. My inbox is always open.
           </p>
         </motion.div>
 
         <div className={styles.grid}>
-          {/* Left – Info */}
-          <motion.div
-            className={styles.infoCol}
-            variants={fadeUp}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <div className={`availability-badge ${styles.badge}`}>
-              <span className="dot" />
-              Available for 4, 8, 12-month internships
-            </div>
-            <p className={styles.tagline}>
-              Whether it&apos;s a full-stack role, cloud infrastructure, AI/ML, or DevOps —
-              I&apos;m ready to contribute from day one.
-            </p>
-
-            <div className={styles.links}>
-              {contactLinks.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className={`glass-card-sm ${styles.linkCard}`}
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                  whileHover={{ x: 6 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span className={styles.linkIcon} style={{ color: link.color, borderColor: `${link.color}33` }}>
-                    {link.icon}
-                  </span>
-                  <div>
-                    <div className={styles.linkLabel}>{link.label}</div>
-                    <div className={styles.linkValue}>{link.value}</div>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right – CTA Card */}
-          <motion.div
-            className={styles.ctaCol}
-            variants={fadeUp}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <div className={`glass-card glow-border ${styles.ctaCard}`}>
-              <div className={styles.ctaGlow} />
-              <span style={{ fontSize: "3rem" }}>👋</span>
-              <h3 className={styles.ctaTitle}>Ready to collaborate?</h3>
-              <p className={styles.ctaText}>
-                I&apos;m passionate about building impactful software. Let&apos;s discuss how
-                I can bring value to your team.
-              </p>
-              <div className={styles.ctaButtons}>
-                <a href="mailto:pns@ualberta.ca" className="btn-primary">
-                  <Send size={16} />
-                  Send Email
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/pranav-ns-/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                >
-                  <LinkedInIcon size={16} />
-                  LinkedIn
-                </a>
-                <a
-                  href="https://www.instagram.com/pranav._.ns/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                >
-                  <InstagramIcon size={16} />
-                  Instagram
-                </a>
+          {contactLinks.map((link, i) => (
+            <motion.a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className={`glass-card ${styles.linkCard}`}
+              variants={fadeUp}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className={styles.cardGlow} style={{ background: link.color }} />
+              <div className={styles.iconWrapper} style={{ color: link.color, backgroundColor: `${link.color}1A` }}>
+                {link.icon}
               </div>
-              <div className={styles.ctaMeta}>
-                <span className="font-mono" style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
-                  Usually responds within 24h
-                </span>
+              <div className={styles.linkInfo}>
+                <div className={styles.linkLabel}>{link.label}</div>
+                <div className={styles.linkValue}>{link.value}</div>
               </div>
-            </div>
-          </motion.div>
+            </motion.a>
+          ))}
         </div>
       </div>
 
