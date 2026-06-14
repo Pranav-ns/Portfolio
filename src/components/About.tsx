@@ -44,20 +44,16 @@ export default function About() {
             variants={fadeUp}
           >
             <p>
-              I&apos;m <strong>Pranav Namah Satish</strong> — a BSc Computing Science (AI) student
-              at the <span className="text-gradient">University of Alberta</span>, driven by a passion
-              for building things that matter at the intersection of software, cloud, and AI.
+              I&apos;m <strong>Pranav Namah Satish</strong>, a Computing Science (AI) student at the <span className="text-gradient">University of Alberta</span> with a passion for building intelligent, scalable systems that combine software engineering, cloud infrastructure, and machine learning.
             </p>
             <p>
-              My experience spans full-stack development with React & Node.js, cloud-native
-              deployments on AWS, containerisation with Docker & Kubernetes, and AI integrations
-              using Amazon Bedrock and Gemini AI. I care about clean code, great UX, and systems
-              that scale.
+              What excites me most about technology is solving complex problems that create real-world impact. Whether it&apos;s developing full-stack applications, deploying cloud-native solutions on AWS, integrating large language models, or exploring MLOps and AI reliability, I enjoy understanding how systems work end-to-end and making them better.
             </p>
             <p>
-              Outside engineering, I mentor students in theory of computation and work to build
-              inclusive communities across cultural groups at university. I&apos;m actively seeking
-              <strong> 4, 8, or 12-month internships</strong> in Software Engineering, Cloud, or AI/ML.
+              My experience spans modern web development, cloud computing, DevOps practices, and AI engineering. Beyond coursework, I&apos;ve worked on projects involving AI-powered applications, cloud deployments, and AI pipeline observability, while continuously expanding my knowledge through research, certifications, and hands-on experimentation.
+            </p>
+            <p>
+              Outside of engineering, I mentor students, contribute to university communities, and enjoy helping others learn technical concepts. I&apos;m currently focused on deepening my expertise in machine learning, cloud architecture, and AI systems with the long-term goal of building reliable, production-ready intelligent technologies at scale.
             </p>
 
             {/* Quick Info */}
