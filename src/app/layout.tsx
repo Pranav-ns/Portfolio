@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingHashtags from "@/components/FloatingHashtags";
 
 export const metadata: Metadata = {
   title: "Pranav Namah Satish — Full-Stack & AI Engineer",
@@ -52,7 +53,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="relative">
+        <FloatingHashtags />
         <div className="grid-bg" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
