@@ -44,6 +44,7 @@ const projects = [
     color: "#ff6584",
     gradient: "linear-gradient(135deg, rgba(255,101,132,0.05) 0%, rgba(108,99,255,0.02) 100%)",
     featured: false,
+    demoLink: "https://shelf-out.pranavns.com",
   },
   {
     id: "failure-forensics",
