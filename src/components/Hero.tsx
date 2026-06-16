@@ -1,5 +1,5 @@
 "use client";
-import { ArrowDown, FileText, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedInIcon, InstagramIcon } from "@/components/Icons";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
@@ -53,9 +53,6 @@ export default function Hero() {
               className={styles.secondaryBtn}
             >
               <GithubIcon size={16} /> GitHub
-            </a>
-            <a href="/resume.png" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>
-              <FileText size={16} /> Resume
             </a>
           </div>
 
