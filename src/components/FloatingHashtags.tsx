@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const rawHashtags = [
-  "#Ambitious", "#Curious", "#HardWorking", "#SmartWorker", "#ProblemSolver", 
-  "#LifelongLearner", "#Adaptable", "#Resilient", "#Innovative", "#AnalyticalThinker", 
-  "#Collaborative", "#Leader", "#Mentor", "#Reliable", "#Creative", "#Driven", 
-  "#Funny", "#Friendly", "#OpenMinded", "#GrowthMindset", "#AIForGood", 
-  "#ScalableSystems", "#CloudNative", "#IntelligentSystems", "#Mentorship", 
-  "#CommunityBuilding", "#Builder", "#TechLeader", "#ResearchDriven", 
-  "#ContinuousLearner", "#Innovation", "#AIEngineering", "#MachineLearning", 
-  "#CloudComputing", "#AWS", "#MLOps", "#DevOps", "#FullStackDevelopment", 
-  "#SoftwareEngineering", "#Docker", "#Kubernetes", "#LLMs", "#GenerativeAI"
+  "#ResearchDriven", "#ContinuousLearner", "#Innovation", "#AIEngineering", "#MachineLearning",
+  "#CloudComputing", "#AWS", "#MLOps", "#DevOps", "#FullStackDevelopment", "#SoftwareEngineering",
+  "#Docker", "#Kubernetes", "#LLMs", "#GenerativeAI", "#Funny", "#Friendly", "#Ambitious",
+  "#HardWorking", "#SmartWorking", "#Confident", "#Curious", "#Creative", "#Motivated",
+  "#Positive", "#Reliable", "#Helpful", "#Honest", "#Dedicated", "#Passionate", "#Focused",
+  "#Adaptable", "#TeamPlayer", "#QuickLearner", "#Responsible", "#Optimistic", "#Respectful",
+  "#Determined", "#Outgoing", "#Enthusiastic", "#Disciplined", "#Supportive", "#OpenMinded",
+  "#SelfMotivated", "#EasyGoing", "#Driven", "#SmartWorker", "#TechEnthusiast", "#AIBuilder",
+  "#CloudLearner", "#ProblemSolver", "#FastLearner", "#Innovative", "#Resourceful", "#CareerFocused",
+  "#GoalOriented", "#Analytical", "#CreativeThinker", "#Persistent", "#Collaborative",
+  "#NetworkingPro", "#LeadershipPotential", "#GrowthMindset", "#Entrepreneurial", "#DevOpsMindset",
+  "#LifelongLearner"
 ];
 
 // Remove duplicates
@@ -32,7 +35,7 @@ export default function FloatingHashtags() {
   useEffect(() => {
     // To prevent overcrowding, we scatter them across the entire scrollable height of the page.
     // We treat the area as a grid of (cols x rows)
-    const cols = 4; // 4 columns horizontally
+    const cols = 5; // 5 columns horizontally
     const rows = Math.ceil(hashtags.length / cols);
     
     const mapped = hashtags.map((tag, i) => {
@@ -40,14 +43,14 @@ export default function FloatingHashtags() {
       const row = Math.floor(i / cols);
       
       // Calculate base percentage positions
-      // X varies from 5% to 95%
+      // X varies from 0% to 100%
       const baseX = (col / cols) * 100 + (100 / cols) / 2;
-      // Y varies from 5% to 95%
+      // Y varies from 0% to 100%
       const baseY = (row / rows) * 100 + (100 / rows) / 2;
       
-      // Add random jitter to break the rigid grid look (-10% to 10% for X, -5% to 5% for Y)
-      const x = baseX + (Math.random() * 20 - 10);
-      const y = baseY + (Math.random() * 10 - 5);
+      // Add random jitter (-15% to 15% for X, -8% to 8% for Y)
+      const x = baseX + (Math.random() * 30 - 15);
+      const y = baseY + (Math.random() * 16 - 8);
       
       // Randomize animation params
       const duration = 20 + Math.random() * 20; // 20s to 40s
