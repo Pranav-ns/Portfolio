@@ -45,7 +45,7 @@ const contactLinks = [
     icon: <Coffee size={24} />,
     label: "Coffee",
     value: "Buy me a coffee",
-    href: "https://buymeacoffee.com/your-link",
+    href: "https://buymeacoffee.com/pranavns",
     color: "#f59e0b",
   },
 ];
