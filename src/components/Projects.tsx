@@ -18,7 +18,7 @@ const projects = [
     color: "#6c63ff",
     gradient: "linear-gradient(135deg, rgba(108,99,255,0.06) 0%, rgba(0,212,255,0.02) 100%)",
     featured: true,
-    demoLink: "https://caterbridge.pranavns.com",
+    demoLink: "https://frontend-red-two-anl6ojt6h4.vercel.app/",
   },
   {
     id: "papo",
