@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Coffee, Calendar } from "lucide-react";
 import { GithubIcon, LinkedInIcon, InstagramIcon } from "@/components/Icons";
 import styles from "./Contact.module.css";
 
@@ -33,6 +33,20 @@ const contactLinks = [
     value: "@pranav._.ns",
     href: "https://www.instagram.com/pranav._.ns/",
     color: "#ff6584",
+  },
+  {
+    icon: <Calendar size={24} />,
+    label: "Meeting",
+    value: "Schedule a chat",
+    href: "https://calendly.com/your-link",
+    color: "#a855f7",
+  },
+  {
+    icon: <Coffee size={24} />,
+    label: "Coffee",
+    value: "Buy me a coffee",
+    href: "https://buymeacoffee.com/your-link",
+    color: "#f59e0b",
   },
 ];
 
