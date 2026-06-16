@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
@@ -52,15 +51,9 @@ export default function Navbar() {
     >
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <Link href="#hero" className={styles.logo} onClick={() => handleLinkClick("#hero")} style={{ display: 'flex', alignItems: 'center' }}>
-          <Image 
-            src="/nsp-logo.png" 
-            alt="NSP Logo" 
-            width={80} 
-            height={32} 
-            style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} 
-            priority 
-          />
+        <Link href="#hero" className={styles.logo} onClick={() => handleLinkClick("#hero")}>
+          <span className="text-gradient">PNS</span>
+          <span className={styles.logoDot} />
         </Link>
 
         {/* Desktop Nav */}
