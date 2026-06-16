@@ -26,9 +26,7 @@ export default function Hero() {
           <h2 className={styles.title} style={{ minHeight: "1.2em", display: "flex", alignItems: "center" }}>
             <TypeAnimation
               sequence={[
-                "Software Engineer",
-                2000,
-                "AI Engineer",
+                "Software Engineer & AI Engineer",
                 2000,
                 "Cloud Architect",
                 2000,
