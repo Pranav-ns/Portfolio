@@ -73,32 +73,6 @@ export default function About() {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "24px" }}>
-              <a href="mailto:pns@ualberta.ca" className="btn-primary">
-                Contact Me
-              </a>
-              <a
-                href="https://www.linkedin.com/in/pranav-ns-/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="/resume.png"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-                style={{
-                  background: "var(--gradient-primary)",
-                  color: "#fff",
-                  border: "none"
-                }}
-              >
-                Resume
-              </a>
-            </div>
           </motion.div>
 
           {/* Right – Terminal Animation */}

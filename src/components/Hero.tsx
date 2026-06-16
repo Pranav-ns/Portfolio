@@ -1,5 +1,5 @@
 "use client";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
 import { GithubIcon, LinkedInIcon, InstagramIcon } from "@/components/Icons";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
@@ -43,8 +43,8 @@ export default function Hero() {
           </p>
 
           <div className={styles.ctaRow}>
-            <a href="mailto:pns@ualberta.ca" className={styles.primaryBtn}>
-              <Mail size={16} /> Contact Me
+            <a href="/resume.png" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>
+              <FileText size={16} /> Resume
             </a>
             <a
               href="https://github.com/Pranav-ns"
