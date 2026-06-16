@@ -72,7 +72,7 @@ export default function FloatingHashtags() {
         width: "100vw", 
         height: "100vh", 
         overflow: "hidden", 
-        zIndex: -3, 
+        zIndex: -1, 
         pointerEvents: "none" 
       }}
     >
