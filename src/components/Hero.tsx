@@ -2,6 +2,7 @@
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedInIcon, InstagramIcon } from "@/components/Icons";
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -22,8 +23,20 @@ export default function Hero() {
             Pranav Namah Satish
           </h1>
 
-          <h2 className={styles.title}>
-            Software Engineer & AI Engineer
+          <h2 className={styles.title} style={{ minHeight: "1.2em", display: "flex", alignItems: "center" }}>
+            <TypeAnimation
+              sequence={[
+                "Software Engineer",
+                2000,
+                "AI Engineer",
+                2000,
+                "Cloud Architect",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
           </h2>
 
           <p className={styles.bio}>
