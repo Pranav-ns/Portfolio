@@ -38,7 +38,7 @@ const contactLinks = [
     icon: <Calendar size={24} />,
     label: "Meeting",
     value: "Schedule a chat",
-    href: "https://calendly.com/your-link",
+    href: "https://calendly.com/pranav-ns",
     color: "#a855f7",
   },
   {
