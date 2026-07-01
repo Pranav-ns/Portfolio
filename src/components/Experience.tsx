@@ -20,6 +20,20 @@ const experiences = [
     color: "#ff6584",
   },
   {
+    role: "Co Facilitator",
+    company: "University of Alberta (International House)",
+    companyUrl: "https://www.ualberta.ca/en/international/global-education/international-house/index.html",
+    period: "Sept 2025 – April 2026",
+    location: "Leadership",
+    type: "Leadership",
+    bullets: [
+      "Contributing to student engagement and cross-cultural community building.",
+      "Led and supported events and activities that enhanced international student integration and campus involvement."
+    ],
+    tags: ["Community Building", "Cross-Cultural", "Event Leadership", "Student Engagement"],
+    color: "#6c63ff",
+  },
+  {
     role: "Technical Support Intern",
     company: "Joint Role Media",
     companyUrl: "https://jointrolemedia.com/",
@@ -47,20 +61,6 @@ const experiences = [
     ],
     tags: ["Mentoring", "Theory of Computation", "Programming", "Technical Fundamentals"],
     color: "#00d4ff",
-  },
-  {
-    role: "Co Facilitator",
-    company: "University of Alberta (International House)",
-    companyUrl: "https://www.ualberta.ca/en/international/global-education/international-house/index.html",
-    period: "Sept 2025 – April 2026",
-    location: "Leadership",
-    type: "Leadership",
-    bullets: [
-      "Contributing to student engagement and cross-cultural community building.",
-      "Led and supported events and activities that enhanced international student integration and campus involvement."
-    ],
-    tags: ["Community Building", "Cross-Cultural", "Event Leadership", "Student Engagement"],
-    color: "#6c63ff",
   },
 ];
 
