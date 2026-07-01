@@ -94,6 +94,27 @@ export default function Experience() {
         </motion.div>
 
         <div className={styles.timeline}>
+          {/* Future / Looking for */}
+          <motion.div
+            className={styles.timelineItem}
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            <div className={styles.timelineLine}>
+              <div className={styles.futureDot} />
+            </div>
+            <div className={`${styles.futureCard}`}>
+              <span className="availability-badge">
+                <span className="dot" />
+                Open to New Opportunities — 4, 8, or 12-month internships
+              </span>
+              <p style={{ marginTop: "12px", color: "var(--text-muted)", fontSize: "0.9rem" }}>
+                Seeking Software Engineering, Cloud, or AI/ML roles. Available immediately.
+              </p>
+            </div>
+          </motion.div>
+
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.role}
@@ -145,27 +166,6 @@ export default function Experience() {
               </div>
             </motion.div>
           ))}
-
-          {/* Future / Looking for */}
-          <motion.div
-            className={styles.timelineItem}
-            variants={fadeUp}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <div className={styles.timelineLine}>
-              <div className={styles.futureDot} />
-            </div>
-            <div className={`${styles.futureCard}`}>
-              <span className="availability-badge">
-                <span className="dot" />
-                Open to New Opportunities — 4, 8, or 12-month internships
-              </span>
-              <p style={{ marginTop: "12px", color: "var(--text-muted)", fontSize: "0.9rem" }}>
-                Seeking Software Engineering, Cloud, or AI/ML roles. Available immediately.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
