@@ -6,6 +6,20 @@ import styles from "./Experience.module.css";
 
 const experiences = [
   {
+    role: "DevOps Engineer Intern",
+    company: "StackPro",
+    companyUrl: "#",
+    period: "Jul 2026 – Present",
+    location: "Bangalore",
+    type: "Internship",
+    bullets: [
+      "Architecting and deploying cloud-native automation pipelines to support scalable backend workflows and seamless AI-feature integration.",
+      "Spearheading the development of GenAI-enabled product prototypes, bridging the gap between experimental machine learning models and production-ready software systems.",
+    ],
+    tags: ["DevOps", "GenAI", "Cloud-Native", "Automation"],
+    color: "#ff6584",
+  },
+  {
     role: "Technical Support Intern",
     company: "Joint Role Media",
     companyUrl: "https://jointrolemedia.com/",
