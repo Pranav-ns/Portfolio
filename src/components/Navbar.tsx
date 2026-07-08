@@ -77,6 +77,13 @@ export default function Navbar() {
               Blogs
             </Link>
             <Link
+              href="/freelancing"
+              className="btn-secondary"
+              style={{ padding: "10px 22px", fontSize: "0.85rem" }}
+            >
+              Freelancing
+            </Link>
+            <Link
               href="/games"
               className="btn-primary"
               style={{ padding: "10px 22px", fontSize: "0.85rem" }}
@@ -118,6 +125,13 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               Blogs
+            </Link>
+            <Link
+              href="/freelancing"
+              className="btn-secondary"
+              onClick={() => setMenuOpen(false)}
+            >
+              Freelancing
             </Link>
             <Link
               href="/games"
