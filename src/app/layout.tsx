@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import FloatingHashtags from "@/components/FloatingHashtags";
 import ChatbotWidget from "@/components/ChatbotWidget";
 
 export const metadata: Metadata = {
@@ -55,7 +54,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <FloatingHashtags />
         <div className="grid-bg" aria-hidden="true" />
         <div className="noise-overlay" aria-hidden="true" />
         {children}
