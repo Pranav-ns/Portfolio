@@ -78,17 +78,10 @@ export default function Navbar() {
             </Link>
             <Link
               href="/freelancing"
-              className="btn-secondary"
-              style={{ padding: "10px 22px", fontSize: "0.85rem" }}
-            >
-              Freelancing
-            </Link>
-            <Link
-              href="/games"
               className="btn-primary"
               style={{ padding: "10px 22px", fontSize: "0.85rem" }}
             >
-              Games
+              Freelancing
             </Link>
           </div>
         </nav>
@@ -128,17 +121,10 @@ export default function Navbar() {
             </Link>
             <Link
               href="/freelancing"
-              className="btn-secondary"
-              onClick={() => setMenuOpen(false)}
-            >
-              Freelancing
-            </Link>
-            <Link
-              href="/games"
               className="btn-primary"
               onClick={() => setMenuOpen(false)}
             >
-              Games
+              Freelancing
             </Link>
           </div>
         </nav>
