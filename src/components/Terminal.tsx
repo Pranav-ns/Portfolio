@@ -51,8 +51,8 @@ function run(raw: string): Line[] | "clear" {
       ];
     case "now":
       return [
-        out("▸ DevOps intern at StackPro, shipping GenAI prototypes"),
-        out("▸ building Failure Forensics for LLM pipelines"),
+        out("▸ building Failure Forensics, root-cause analysis for AI incidents"),
+        out("▸ looking for a 4, 8 or 12-month internship"),
         out("▸ studying for AWS certs, and learning French (lentement)"),
       ];
     case "experience":

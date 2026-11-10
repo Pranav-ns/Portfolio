@@ -106,7 +106,7 @@ export default function Home() {
               <span className={`${styles.sticker} ${styles.stickerA}`}>
                 <span className={styles.liveDot} aria-hidden="true" /> open to internships
               </span>
-              <span className={`${styles.sticker} ${styles.stickerB}`}>now @ StackPro</span>
+              <span className={`${styles.sticker} ${styles.stickerB}`}>CS (AI) @ UAlberta</span>
             </div>
           </div>
         </section>

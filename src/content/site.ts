@@ -8,7 +8,7 @@ export const profile = {
   availability: "Open to 4, 8 or 12-month internships",
   // The headline is split so the middle part can be highlighted.
   headline: ["I build cloud-native apps and the ", "AI systems", " that run inside them."],
-  now: "DevOps intern at StackPro",
+  now: "Building Failure Forensics",
   intro:
     "Computing Science (AI) student at the University of Alberta. I like taking an idea from a repo to a monitored production deploy: full-stack apps, AWS infrastructure, CI/CD, and LLM features that hold up under real traffic.",
 };
@@ -77,7 +77,7 @@ export const buildingNow = [
   {
     title: "Failure Forensics",
     summary: "Root-cause analysis for LLM and RAG pipelines, from retrieval through inference.",
-    href: "https://github.com/Pranav-ns/Failure-Forensics",
+    href: "https://github.com/UndergraduateArtificialIntelligenceClub/Failure-Forensics",
   },
   {
     title: "LLM Cost Autopilot",
@@ -99,11 +99,11 @@ export const experience: Role[] = [
   {
     role: "DevOps Engineer Intern",
     org: "StackPro",
-    period: "Jul 2026 – now",
+    period: "2026",
     place: "Bangalore",
     points: [
-      "Building cloud-native automation pipelines for scalable backend workflows and AI feature rollout.",
-      "Leading GenAI product prototypes from experiment to production-ready software.",
+      "Built cloud-native automation pipelines for scalable backend workflows and AI feature rollout.",
+      "Led GenAI product prototypes from experiment to production-ready software.",
     ],
   },
   {
