@@ -2,29 +2,26 @@
    Design tokens: light by default, dark via prefers-color-scheme or the toggle
    ============================================ */
 :root {
-  /* Bold palette: warm paper, near-black ink, one loud orange, and three card colors */
-  --bg: #fff6e9;
-  --surface: #ffffff;
-  --ink: #141414;
-  --ink-soft: #3d3d3d;
-  --ink-faint: #6e6a63;
-  --line: #141414;
-  --accent: #ff5a1f;
-  --accent-soft: rgba(255, 90, 31, 0.18);
-  --hot: #e5260f;
-  --lilac: #cbb8ff;
-  --lime: #d4f56a;
-  --pink: #ffb8cf;
-  --sky: #a9e4ff;
+  /* Dark, editor-inspired palette */
+  --bg: #0b0d10;
+  --surface: #12161b;
+  --ink: #e6edf3;
+  --ink-soft: #a3aebb;
+  --ink-faint: #66717e;
+  --line: #222a33;
+  --accent: #7ee787;
+  --accent-soft: rgba(126, 231, 135, 0.14);
+  --hot: #ff7b72;
+  --cyan: #79c0ff;
+  --violet: #d2a8ff;
+  --amber: #ffa657;
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --width: 1080px;
+  --width: 1040px;
   --gutter: 24px;
-  --shadow: 5px 5px 0 var(--ink);
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
