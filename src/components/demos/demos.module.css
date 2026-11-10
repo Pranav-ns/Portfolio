@@ -124,10 +124,6 @@
 
 /* ---------- Shelf scan ---------- */
 .shelf { width: 100%; height: auto; display: block; --spine-l: 62%; }
-:global([data-theme="dark"]) .shelf { --spine-l: 42%; }
-@media (prefers-color-scheme: dark) {
-  :global(:root:not([data-theme="light"])) .shelf { --spine-l: 42%; }
-}
 .plank { fill: var(--ink-faint); opacity: 0.5; }
 .box {
   fill: none;

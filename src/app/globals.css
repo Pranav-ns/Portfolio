@@ -2,49 +2,29 @@
    Design tokens: light by default, dark via prefers-color-scheme or the toggle
    ============================================ */
 :root {
-  --bg: #fafaf7;
-  --surface: #f2f2ee;
-  --ink: #18181b;
-  --ink-soft: #52525b;
-  --ink-faint: #8a8a93;
-  --line: #e4e4de;
-  --accent: #1f7a4d;
-  --accent-soft: rgba(31, 122, 77, 0.16);
-  --hot: #d9480f;
+  /* Bold palette: warm paper, near-black ink, one loud orange, and three card colors */
+  --bg: #fff6e9;
+  --surface: #ffffff;
+  --ink: #141414;
+  --ink-soft: #3d3d3d;
+  --ink-faint: #6e6a63;
+  --line: #141414;
+  --accent: #ff5a1f;
+  --accent-soft: rgba(255, 90, 31, 0.18);
+  --hot: #e5260f;
+  --lilac: #cbb8ff;
+  --lime: #d4f56a;
+  --pink: #ffb8cf;
+  --sky: #a9e4ff;
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --width: 920px;
+  --width: 1080px;
   --gutter: 24px;
+  --shadow: 5px 5px 0 var(--ink);
   color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1011;
-    --surface: #17181a;
-    --ink: #ededea;
-    --ink-soft: #a1a1aa;
-    --ink-faint: #71717a;
-    --line: #26272a;
-    --accent: #5cc98f;
-    --accent-soft: rgba(92, 201, 143, 0.18);
-    --hot: #ff8a5c;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0f1011;
-  --surface: #17181a;
-  --ink: #ededea;
-  --ink-soft: #a1a1aa;
-  --ink-faint: #71717a;
-  --line: #26272a;
-  --accent: #5cc98f;
-  --accent-soft: rgba(92, 201, 143, 0.18);
-  --hot: #ff8a5c;
-  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

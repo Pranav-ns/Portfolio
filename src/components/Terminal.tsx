@@ -14,7 +14,6 @@ const HELP = [
   "experience    where I've worked",
   "stack         tools I reach for",
   "contact       how to reach me",
-  "theme         flip light / dark",
   "coffee        fuel the next project",
   "clear         wipe the screen",
   "",
@@ -71,16 +70,6 @@ function run(raw: string): Line[] | "clear" {
         out("github    @Pranav-ns", links.github),
         out("call      book 30 min", links.calendly),
       ];
-    case "theme": {
-      const root = document.documentElement;
-      const current =
-        root.dataset.theme ??
-        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      const next = current === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
-      try { localStorage.setItem("theme", next); } catch { /* ignore */ }
-      return [{ kind: "ok", text: `switched to ${next} mode` }];
-    }
     case "coffee":
       return [out("☕ thank you! → buymeacoffee.com/pranavns", links.coffee)];
     case "hire-pranav":
