@@ -10,7 +10,7 @@ export default function DemoPendingPage() {
           Live <span className="text-gradient">Demo</span>
         </h1>
         <p className="section-subtitle" style={{ margin: "0 auto 20px", fontSize: "1.05rem" }}>
-          This project's live demo is currently under development. Please come back later! Sorry for the inconvenience.
+          This project&apos;s live demo is currently under development. Please come back later! Sorry for the inconvenience.
         </p>
         <p style={{ margin: "0 auto 40px", color: "var(--text-muted)", fontSize: "0.95rem" }}>
           Or please visit my GitHub to check it out!
