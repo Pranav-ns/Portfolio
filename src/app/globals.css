@@ -10,6 +10,7 @@
   --line: #e4e4de;
   --accent: #1f7a4d;
   --accent-soft: rgba(31, 122, 77, 0.16);
+  --hot: #d9480f;
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -29,6 +30,7 @@
     --line: #26272a;
     --accent: #5cc98f;
     --accent-soft: rgba(92, 201, 143, 0.18);
+    --hot: #ff8a5c;
     color-scheme: dark;
   }
 }
@@ -41,6 +43,7 @@
   --line: #26272a;
   --accent: #5cc98f;
   --accent-soft: rgba(92, 201, 143, 0.18);
+  --hot: #ff8a5c;
   color-scheme: dark;
 }
 

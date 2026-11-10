@@ -6,7 +6,9 @@ export const profile = {
   location: "Edmonton, AB",
   email: "pns@ualberta.ca",
   availability: "Open to 4, 8 or 12-month internships",
-  headline: "I build cloud-native apps and the AI systems that run inside them.",
+  // The headline is split so the middle part can be highlighted.
+  headline: ["I build cloud-native apps and the ", "AI systems", " that run inside them."],
+  now: "DevOps intern at StackPro",
   intro:
     "Computing Science (AI) student at the University of Alberta. I like taking an idea from a repo to a monitored production deploy: full-stack apps, AWS infrastructure, CI/CD, and LLM features that hold up under real traffic.",
 };
@@ -28,8 +30,8 @@ export type Project = {
   stack: string[];
   live?: string;
   code?: string;
-  // A short, monospace "trace" that shows how the thing works.
-  trace: { label: string; lines: string[] };
+  // Which interactive demo panel to show beside the project.
+  demo: "status" | "chat" | "shelf";
 };
 
 export const projects: Project[] = [
@@ -46,16 +48,7 @@ export const projects: Project[] = [
     ],
     stack: ["React", "Node.js", "MongoDB", "AWS EC2", "Nginx", "Grafana"],
     live: "https://frontend-red-two-anl6ojt6h4.vercel.app/",
-    trace: {
-      label: "deploy",
-      lines: [
-        "$ pm2 status",
-        "  api        online   ✓",
-        "$ nginx -t",
-        "  syntax ok  ✓",
-        "# alerts → grafana",
-      ],
-    },
+    demo: "status",
   },
   {
     slug: "papo-ai",
@@ -66,16 +59,7 @@ export const projects: Project[] = [
     stack: ["React", "AWS Amplify", "AppSync", "Cognito", "Bedrock", "GitHub Actions"],
     live: "https://papo-ai.pranavns.com",
     code: "https://github.com/Pranav-ns/Papo-AI",
-    trace: {
-      label: "request path",
-      lines: [
-        "client",
-        "  → cognito   auth",
-        "  → appsync   graphql",
-        "  → bedrock   recommend()",
-        "  ← recipes",
-      ],
-    },
+    demo: "chat",
   },
   {
     slug: "shelfout",
@@ -85,16 +69,7 @@ export const projects: Project[] = [
       "Snap a photo of a bookshelf and get recommendations back. Computer vision reads the spines, metadata enrichment fills the gaps, and an AI ranker picks what to read next.",
     stack: ["Python", "Computer Vision", "Node.js", "Docker", "Kubernetes"],
     live: "https://shelf-out.pranavns.com",
-    trace: {
-      label: "pipeline",
-      lines: [
-        "shelf.jpg",
-        "  → detect spines",
-        "  → enrich metadata",
-        "  → rank (cached)",
-        "  ← next reads",
-      ],
-    },
+    demo: "shelf",
   },
 ];
 
