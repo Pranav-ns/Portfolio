@@ -14,6 +14,7 @@ const HELP = [
   "experience    where I've worked",
   "stack         tools I reach for",
   "contact       how to reach me",
+  "nimbus        make the cloud do a trick",
   "coffee        fuel the next project",
   "clear         wipe the screen",
   "",
@@ -70,6 +71,10 @@ function run(raw: string): Line[] | "clear" {
         out("github    @Pranav-ns", links.github),
         out("call      book 30 min", links.calendly),
       ];
+    case "nimbus":
+    case "pet":
+      window.dispatchEvent(new Event("nimbus:trick"));
+      return [{ kind: "ok", text: "☁️ nimbus: on it!" }];
     case "coffee":
       return [out("☕ thank you! → buymeacoffee.com/pranavns", links.coffee)];
     case "hire-pranav":
