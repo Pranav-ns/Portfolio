@@ -2,28 +2,28 @@
    Design tokens: light by default, dark via prefers-color-scheme or the toggle
    ============================================ */
 :root {
-  /* Bold palette: warm paper, near-black ink, one loud orange, and three card colors */
-  --bg: #fff6e9;
-  --surface: #ffffff;
-  --ink: #141414;
-  --ink-soft: #3d3d3d;
-  --ink-faint: #6e6a63;
-  --line: #141414;
-  --accent: #ff5a1f;
-  --accent-soft: rgba(255, 90, 31, 0.18);
-  --hot: #e5260f;
-  --lilac: #cbb8ff;
-  --lime: #d4f56a;
-  --pink: #ffb8cf;
-  --sky: #a9e4ff;
+  /* Bento palette: soft grey canvas, white tiles, violet accent, pastel tiles */
+  --bg: #efefec;
+  --surface: #f7f7f5;
+  --tile: #ffffff;
+  --ink: #18181b;
+  --ink-soft: #52525b;
+  --ink-faint: #8b8b93;
+  --line: #e4e4e0;
+  --accent: #6d4aff;
+  --accent-soft: rgba(109, 74, 255, 0.14);
+  --hot: #e5484d;
+  --mint: #d7f5e6;
+  --peach: #ffe4d4;
+  --lav: #e8e2ff;
+  --sun: #fff1b8;
 
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --width: 1080px;
-  --gutter: 24px;
-  --shadow: 5px 5px 0 var(--ink);
+  --width: 1160px;
+  --gutter: 20px;
+  --radius: 28px;
   color-scheme: light;
 }
 

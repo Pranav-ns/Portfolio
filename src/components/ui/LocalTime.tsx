@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 /** Shows the current time in Edmonton, ticking every 20s. Renders the city alone on the server. */
-export default function LocalTime() {
+export default function LocalTime({ bare = false }: { bare?: boolean }) {
   const [time, setTime] = useState<string | null>(null);
 
   useEffect(() => {
@@ -17,5 +17,6 @@ export default function LocalTime() {
     return () => clearInterval(id);
   }, []);
 
+  if (bare) return <span>{time ?? "Edmonton"}</span>;
   return <span>{time ? `${time} in Edmonton, AB` : "Edmonton, AB"}</span>;
 }
