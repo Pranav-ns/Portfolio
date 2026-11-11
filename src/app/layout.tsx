@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ChatbotWidget from "@/components/ChatbotWidget";
+import Nimbus from "@/components/pet/Nimbus";
 
 export const metadata: Metadata = {
   title: "Pranav Namah Satish — Full-Stack & AI Engineer",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "BSc Computing Science (AI) student at the University of Alberta. Skilled in React, Node.js, Python, AWS, Docker, and AI/ML.",
     type: "website",
-    url: "https://github.com/Pranav-ns",
+    url: "https://www.pranavns.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -49,15 +49,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
-        <div className="grid-bg" aria-hidden="true" />
-        <div className="noise-overlay" aria-hidden="true" />
         {children}
-        <ChatbotWidget />
+        <Nimbus />
       </body>
     </html>
   );
