@@ -2,29 +2,27 @@
    Design tokens: light by default, dark via prefers-color-scheme or the toggle
    ============================================ */
 :root {
-  /* Bento palette: soft grey canvas, white tiles, violet accent, pastel tiles */
-  --bg: #efefec;
-  --surface: #f7f7f5;
-  --tile: #ffffff;
-  --ink: #18181b;
-  --ink-soft: #52525b;
-  --ink-faint: #8b8b93;
-  --line: #e4e4e0;
-  --accent: #6d4aff;
-  --accent-soft: rgba(109, 74, 255, 0.14);
-  --hot: #e5484d;
-  --mint: #d7f5e6;
-  --peach: #ffe4d4;
-  --lav: #e8e2ff;
-  --sun: #fff1b8;
+  /* Aurora palette: northern night sky, aurora greens and violets */
+  --bg: #060a17;
+  --surface: rgba(17, 24, 46, 0.72);
+  --ink: #eef2ff;
+  --ink-soft: #b4bdd6;
+  --ink-faint: #7380a3;
+  --line: rgba(148, 163, 214, 0.18);
+  --accent: #5ef0b4;
+  --accent-soft: rgba(94, 240, 180, 0.16);
+  --hot: #ff8a8a;
+  --violet: #a78bfa;
+  --teal: #2dd4bf;
+  --pink: #f472b6;
 
-  --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --width: 1160px;
-  --gutter: 20px;
-  --radius: 28px;
-  color-scheme: light;
+  --width: 1080px;
+  --gutter: 24px;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

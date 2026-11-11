@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Award, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedInIcon } from "@/components/Icons";
 import CopyEmail from "@/components/ui/CopyEmail";
 import LocalTime from "@/components/ui/LocalTime";
@@ -26,11 +26,20 @@ const DEMOS: Record<Project["demo"], React.ComponentType> = {
   chat: ChatPath,
   shelf: ShelfScan,
 };
-const TINTS = ["var(--lav)", "var(--mint)", "var(--peach)"];
 
-function Chip({ href, children }: { href: string; children: React.ReactNode }) {
+// Deterministic star field so server and client render the same sky.
+const STARS = Array.from({ length: 70 }, (_, i) => {
+  const r = (n: number) => {
+    const x = Math.sin(i * 12.9898 + n * 78.233) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  const round = (v: number) => Math.round(v * 10) / 10;
+  return { x: round(r(1) * 100), y: round(r(2) * 70), s: round(1 + r(3) * 1.8), d: round(r(4) * 4) };
+});
+
+function Glow({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={styles.chip}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={styles.glowLink}>
       {children}
       <ArrowUpRight size={14} aria-hidden="true" />
     </a>
@@ -42,223 +51,219 @@ export default function Home() {
 
   return (
     <>
+      {/* Sky: stars and drifting aurora ribbons behind everything */}
+      <div className={styles.sky} aria-hidden="true">
+        <div className={`${styles.ribbon} ${styles.r1}`} />
+        <div className={`${styles.ribbon} ${styles.r2}`} />
+        <div className={`${styles.ribbon} ${styles.r3}`} />
+        {STARS.map((s, i) => (
+          <span
+            key={i}
+            className={styles.star}
+            style={{ left: `${s.x}%`, top: `${s.y}%`, width: s.s, height: s.s, animationDelay: `${s.d}s` }}
+          />
+        ))}
+      </div>
+
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a href="#top" className={styles.logo}>
-            <span className={styles.logoMark} aria-hidden="true">P</span>
-            Pranav NS
+            pranav<span>✦</span>
           </a>
           <nav className={styles.nav} aria-label="Sections">
             <a href="#work">Work</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact" className={styles.navCta}>Contact</a>
+            <a href="#experience">Journey</a>
+            <a href="#contact">Contact</a>
           </nav>
         </div>
       </header>
 
-      <main id="top" className={styles.main}>
-        {/* ---------- Hero bento ---------- */}
-        <section className={styles.bento}>
-          <div className={`${styles.tile} ${styles.intro}`}>
-            <p className={styles.hello}>
-              <span className={styles.wave} aria-hidden="true">👋</span> Hi, I&apos;m Pranav
+      <main id="top">
+        {/* ---------- Hero ---------- */}
+        <section className={styles.hero}>
+          <div className={styles.heroInner}>
+            <div className={styles.avatarWrap}>
+              <Image src="/pranav-profile.jpg" alt={profile.name} width={112} height={112} className={styles.avatar} priority />
+            </div>
+            <p className={styles.coords}>
+              53.5° N · <LocalTime />
             </p>
             <h1 className={styles.headline}>
               {before}
-              <span className={styles.grad}>{highlight}</span>
+              <span className={styles.auroraText}>{highlight}</span>
               {after}
             </h1>
             <p className={styles.lede}>{profile.intro}</p>
-            <div className={styles.introCtas}>
-              <a href="#contact" className={styles.primary}>
-                <Mail size={16} aria-hidden="true" /> Get in touch
-              </a>
-              <a href="#work" className={styles.secondary}>See projects</a>
+            <div className={styles.ctas}>
+              <a href="#contact" className={styles.primary}>Get in touch</a>
+              <a href="#work" className={styles.secondary}>Explore my work ↓</a>
             </div>
-          </div>
-
-          <div className={`${styles.tile} ${styles.photoTile}`}>
-            <Image src="/pranav-profile.jpg" alt={profile.name} fill sizes="(max-width: 760px) 100vw, 300px" className={styles.photo} priority />
-            <span className={styles.photoTag}>CS (AI) · UAlberta</span>
-          </div>
-
-          <div className={`${styles.tile} ${styles.status}`}>
-            <span className={styles.pulse} aria-hidden="true" />
-            <p className={styles.tileLabel}>Status</p>
-            <p className={styles.tileBig}>Open to internships</p>
-            <p className={styles.tileSmall}>4, 8 or 12 months · SWE, cloud, AI/ML</p>
-          </div>
-
-          <div className={`${styles.tile} ${styles.clock}`}>
-            <p className={styles.tileLabel}>
-              <MapPin size={13} aria-hidden="true" /> Local time
+            <p className={styles.status}>
+              <span className={styles.dot} aria-hidden="true" /> {profile.availability}
             </p>
-            <p className={styles.clockTime}>
-              <LocalTime bare />
-            </p>
-            <p className={styles.tileSmall}>Edmonton, Alberta</p>
           </div>
 
-          <div className={`${styles.tile} ${styles.award}`}>
-            <Award size={22} aria-hidden="true" />
-            <p className={styles.tileBig}>Maple Leaf Award</p>
-            <p className={styles.tileSmall}>2025 · Academic excellence</p>
-          </div>
-
-          <div className={`${styles.tile} ${styles.stackTile}`}>
-            <p className={styles.tileLabel}>Toolkit</p>
-            <div className={styles.marquee}>
-              <div className={styles.marqueeTrack}>
-                {[0, 1].map((n) => (
-                  <span key={n} aria-hidden={n === 1}>
-                    {toolkit.map((t) => (
-                      <span key={t} className={styles.tool}>{t}</span>
-                    ))}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Boreal forest silhouette */}
+          <svg className={styles.forest} viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 160V118l20-30 14 22 18-46 16 40 12-20 20 34 18-52 16 44 14-24 22 36 16-58 18 50 12-18 20 30 18-48 14 38 20-28 16 32 18-62 20 56 12-22 18 34 16-44 18 38 14-26 22 40 18-56 16 48 14-20 20 30 18-50 16 42 12-24 22 36 16-60 18 52 14-22 20 32 18-46 14 38 20-30 18 36 16-54 18 46 12-20 22 34 16-48 20 42 14-26 18 30 20-58 16 50 14-20 20 32 18-46 16 38 14-24 20 34 18-52 16 44 12-22 22 38 16-56 18 48 14-20 20 30 18-44 14 36 20-28 18 34 16-50 18 44 12-18 22 30 16-46 20 40 14-24 18 32 20-56 16 48 14-22 20 34 18-44 16 36 14-26 20 38 18-54 16 46 12-20 22 32 16-48 20 40 V160Z" />
+          </svg>
         </section>
 
-        {/* ---------- Work ---------- */}
-        <section id="work" className={styles.section}>
-          <Reveal>
-            <div className={styles.sectionHead}>
-              <h2>Selected work</h2>
-              <p>Real projects, shipped and running.</p>
-            </div>
-          </Reveal>
-
-          <div className={styles.projects}>
-            {projects.map((p, i) => {
-              const Demo = DEMOS[p.demo];
-              return (
-                <Reveal key={p.slug}>
-                  <article className={`${styles.tile} ${styles.project}`} style={{ ["--tint" as string]: TINTS[i % TINTS.length] }}>
-                    <div className={styles.projectText}>
-                      <span className={styles.projectKind}>{p.kind}</span>
-                      <h3>{p.title}</h3>
-                      <p className={styles.projectSummary}>{p.summary}</p>
-                      {p.metrics && (
-                        <dl className={styles.metrics}>
-                          {p.metrics.map((m) => (
-                            <div key={m.label}>
-                              <dd>{m.value}</dd>
-                              <dt>{m.label}</dt>
-                            </div>
-                          ))}
-                        </dl>
-                      )}
-                      <ul className={styles.stack}>
-                        {p.stack.map((s) => (
-                          <li key={s}>{s}</li>
-                        ))}
-                      </ul>
-                      <div className={styles.projectLinks}>
-                        {p.live && <Chip href={p.live}>Live site</Chip>}
-                        {p.code && <Chip href={p.code}>Code</Chip>}
-                      </div>
-                    </div>
-                    <div className={styles.projectDemo}>
-                      <Demo />
-                    </div>
-                  </article>
-                </Reveal>
-              );
-            })}
-          </div>
-
-          <div className={styles.buildRow}>
-            {buildingNow.map((b) => (
-              <Reveal key={b.title}>
-                <a href={b.href} target="_blank" rel="noopener noreferrer" className={`${styles.tile} ${styles.buildTile}`}>
-                  <span className={styles.wip}>
-                    <Sparkles size={13} aria-hidden="true" /> In progress
-                  </span>
-                  <span className={styles.buildTitle}>{b.title}</span>
-                  <span className={styles.tileSmall}>{b.summary}</span>
-                  <ArrowUpRight size={18} className={styles.corner} aria-hidden="true" />
-                </a>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        {/* ---------- Experience + terminal ---------- */}
-        <section id="experience" className={styles.section}>
-          <Reveal>
-            <div className={styles.sectionHead}>
-              <h2>Experience</h2>
-              <p>Tap a role for details.</p>
-            </div>
-          </Reveal>
-          <div className={styles.split}>
+        <div className={styles.container}>
+          {/* ---------- Work ---------- */}
+          <section id="work" className={styles.section}>
             <Reveal>
-              <div className={`${styles.tile} ${styles.roles}`}>
-                {experience.map((r, i) => (
-                  <details key={r.role} className={styles.role} open={i === 0}>
-                    <summary>
-                      <span className={styles.roleDot} aria-hidden="true" />
-                      <span className={styles.roleMain}>
-                        <span className={styles.roleName}>{r.role}</span>
-                        <span className={styles.roleOrg}>{r.org}</span>
+              <p className={styles.kicker}>Selected work</p>
+              <h2 className={styles.h2}>Things I&apos;ve shipped</h2>
+            </Reveal>
+
+            <div className={styles.projects}>
+              {projects.map((p, i) => {
+                const Demo = DEMOS[p.demo];
+                return (
+                  <Reveal key={p.slug}>
+                    <article className={styles.card}>
+                      <div className={styles.cardText}>
+                        <span className={styles.num}>0{i + 1}</span>
+                        <h3>{p.title}</h3>
+                        <p className={styles.kind}>{p.kind}</p>
+                        <p className={styles.summary}>{p.summary}</p>
+                        {p.metrics && (
+                          <dl className={styles.metrics}>
+                            {p.metrics.map((m) => (
+                              <div key={m.label}>
+                                <dd>{m.value}</dd>
+                                <dt>{m.label}</dt>
+                              </div>
+                            ))}
+                          </dl>
+                        )}
+                        <ul className={styles.stack}>
+                          {p.stack.map((s) => (
+                            <li key={s}>{s}</li>
+                          ))}
+                        </ul>
+                        <div className={styles.links}>
+                          {p.live && <Glow href={p.live}>Live site</Glow>}
+                          {p.code && <Glow href={p.code}>Code</Glow>}
+                        </div>
+                      </div>
+                      <div className={styles.demo}>
+                        <Demo />
+                      </div>
+                    </article>
+                  </Reveal>
+                );
+              })}
+            </div>
+
+            <Reveal>
+              <div className={styles.building}>
+                <p className={styles.kicker}>On the horizon</p>
+                <div className={styles.buildGrid}>
+                  {buildingNow.map((b) => (
+                    <a key={b.title} href={b.href} target="_blank" rel="noopener noreferrer" className={styles.buildCard}>
+                      <span className={styles.buildTitle}>
+                        {b.title} <ArrowUpRight size={16} aria-hidden="true" />
                       </span>
-                      <span className={styles.rolePeriod}>{r.period}</span>
-                    </summary>
-                    <ul className={styles.roleBody}>
-                      {r.points.map((pt) => (
-                        <li key={pt}>{pt}</li>
-                      ))}
-                    </ul>
-                  </details>
-                ))}
-                <p className={styles.extra}>{extras[1]}.</p>
+                      <span>{b.summary}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </Reveal>
-            <Reveal delay={80}>
-              <div className={`${styles.tile} ${styles.termTile}`}>
-                <p className={styles.tileLabel}>Try the terminal</p>
+          </section>
+
+          {/* ---------- Journey: experience as a constellation ---------- */}
+          <section id="experience" className={styles.section}>
+            <Reveal>
+              <p className={styles.kicker}>Journey</p>
+              <h2 className={styles.h2}>Where I&apos;ve been</h2>
+            </Reveal>
+            <Reveal>
+              <ol className={styles.constellation}>
+                {experience.map((r, i) => (
+                  <li key={r.role}>
+                    <details className={styles.role} open={i === 0}>
+                      <summary>
+                        <span className={styles.starDot} aria-hidden="true" />
+                        <span className={styles.rolePeriod}>{r.period}</span>
+                        <span className={styles.roleName}>{r.role}</span>
+                        <span className={styles.roleOrg}>{r.org}</span>
+                      </summary>
+                      <ul className={styles.roleBody}>
+                        {r.points.map((pt) => (
+                          <li key={pt}>{pt}</li>
+                        ))}
+                      </ul>
+                    </details>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+
+            <Reveal>
+              <div className={styles.extras}>
+                <div className={styles.glass}>
+                  <p className={styles.kicker}>Toolkit</p>
+                  <ul className={styles.tags}>
+                    {toolkit.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={styles.glass}>
+                  <p className={styles.kicker}>Also</p>
+                  {extras.map((e) => (
+                    <p key={e} className={styles.extra}>✦ {e}</p>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </section>
+
+          {/* ---------- Terminal ---------- */}
+          <section className={styles.section}>
+            <Reveal>
+              <p className={styles.kicker}>Poke around</p>
+              <h2 className={styles.h2}>A terminal that works</h2>
+            </Reveal>
+            <Reveal>
+              <div className={styles.termWrap}>
                 <Terminal />
               </div>
             </Reveal>
-          </div>
-        </section>
+          </section>
 
-        {/* ---------- Contact ---------- */}
-        <section id="contact" className={styles.section}>
-          <Reveal>
-            <div className={styles.contactGrid}>
-              <div className={`${styles.tile} ${styles.contact}`}>
-                <p className={styles.tileLabelLight}>Contact</p>
-                <h2>Let&apos;s build something.</h2>
-                <p>Hiring for an internship, or have an idea worth building? My inbox is open.</p>
-                <div className={styles.email}>
-                  <CopyEmail email={profile.email} />
-                </div>
+          {/* ---------- Contact ---------- */}
+          <section id="contact" className={`${styles.section} ${styles.contact}`}>
+            <Reveal>
+              <p className={styles.kicker}>Contact</p>
+              <h2 className={styles.contactTitle}>
+                Let&apos;s build <span className={styles.auroraText}>something.</span>
+              </h2>
+              <p className={styles.contactLead}>
+                Hiring for an internship, or have an idea worth building? My inbox is open.
+              </p>
+              <div className={styles.email}>
+                <CopyEmail email={profile.email} />
               </div>
-              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className={`${styles.tile} ${styles.social}`}>
-                <LinkedInIcon size={26} />
-                <span>LinkedIn</span>
-                <ArrowUpRight size={18} className={styles.corner} aria-hidden="true" />
-              </a>
-              <a href={links.github} target="_blank" rel="noopener noreferrer" className={`${styles.tile} ${styles.social}`}>
-                <GithubIcon size={26} />
-                <span>GitHub</span>
-                <ArrowUpRight size={18} className={styles.corner} aria-hidden="true" />
-              </a>
-              <a href={links.calendly} target="_blank" rel="noopener noreferrer" className={`${styles.tile} ${styles.social} ${styles.socialAccent}`}>
-                <span className={styles.calIcon} aria-hidden="true">📅</span>
-                <span>Book a call</span>
-                <ArrowUpRight size={18} className={styles.corner} aria-hidden="true" />
-              </a>
-            </div>
-          </Reveal>
-        </section>
+              <div className={styles.links} style={{ justifyContent: "center" }}>
+                <Glow href={links.calendly}>Book a call</Glow>
+                <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className={styles.glowLink}>
+                  <LinkedInIcon size={14} /> LinkedIn
+                </a>
+                <a href={links.github} target="_blank" rel="noopener noreferrer" className={styles.glowLink}>
+                  <GithubIcon size={14} /> GitHub
+                </a>
+              </div>
+            </Reveal>
+          </section>
+        </div>
       </main>
 
       <footer className={styles.footer}>
-        <span>© {new Date().getFullYear()} {profile.name}</span>
+        <span>© {new Date().getFullYear()} {profile.name} · Edmonton, under the northern lights</span>
         <span className={styles.footerLinks}>
           <Link href="/blogs">Blog</Link>
           <Link href="/freelancing">Freelancing</Link>
