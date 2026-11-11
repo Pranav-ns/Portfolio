@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Nimbus from "@/components/pet/Nimbus";
 
 export const metadata: Metadata = {
   title: "Pranav Namah Satish — Full-Stack & AI Engineer",
@@ -54,6 +55,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <Nimbus />
       </body>
     </html>
   );
